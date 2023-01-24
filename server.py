@@ -17,7 +17,9 @@ def my_link():
   length = len(sessionID)
   sessionID = sessionID.replace('-', '')
   url = "https://join.zoho.com/assist-join?key=" + sessionID + "&language=en&email=" + name
-  browser = webdriver.Edge(EdgeChromiumDriverManager().install())
+  # browser = webdriver.Edge(EdgeChromiumDriverManager().install())
+  # browser = webdriver.Chrome("./linux/chromedriver")
+  browser = webdriver.Chrome("./win/chromedriver.exe")
   browser.get(url)
   time.sleep(3)
   button = browser.find_element("id","download-btn-full")
@@ -27,4 +29,4 @@ def my_link():
   
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
